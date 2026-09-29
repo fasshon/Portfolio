@@ -219,8 +219,8 @@
   .facts .value { text-align: right; font-weight: 500; }
 
   /* ---------- Skills ---------- */
-  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
-  .skill-group { min-height: 190px; padding: 1.5rem; background: var(--bg); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
+  .skill-group { min-height: 190px; padding: 1.5rem; background: transparent; }
   .skill-group h3 { margin: 0 0 1rem; font-size: 1rem; font-weight: 500; }
   .skill-group p { margin: 0 0 1rem; color: var(--ink-soft); font-size: .82rem; }
   .tags { display: flex; flex-wrap: wrap; gap: .45rem; }
@@ -381,16 +381,6 @@
 </header>
 
 <main>
-  <section class="carousel" aria-label="Photo carousel">
-    <div class="stage" id="stage" tabindex="0" aria-roledescription="carousel" aria-live="polite"></div>
-    <div class="controls" id="controls" hidden>
-      <button type="button" id="prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
-      <span class="count" id="count" aria-hidden="true"></span>
-      <button type="button" id="next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
-    </div>
-    <p class="hint" id="hint" hidden>No photos found. Add images to the <code>photos/</code> folder next to this file.</p>
-  </section>
-
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
@@ -412,20 +402,18 @@
         <div><p class="eyebrow">02 · Technical skills</p><h2>What I work with.</h2></div>
       </div>
       <div class="skills-grid" id="skills-grid">
+        <article class="skill-group">
           <h3>C++</h3>
-          <p>
-              I have been working with C++ for about 2–3 years, and it is currently my favorite programming language.
-          </p>
-          <br>
+          <p>I have been working with C++ for about 2–3 years, and it is currently my favorite programming language.</p>
+        </article>
+        <article class="skill-group">
           <h3>Python</h3>
-          <p>
-              I started learning Python early in my programming journey. While I don't use it as frequently anymore, I am comfortable with the language and familiar with its syntax and core concepts.
-          </p>
-
-          <h3>HTML & CSS</h3>
-          <p>
-              I have experience with frontend development through my work with FaZe Media, college courses, and personal projects. I am comfortable building and styling interfaces, although frontend development is currently the area where I have the least experience.
-          </p>
+          <p>I started learning Python early in my programming journey. While I don't use it as frequently anymore, I am comfortable with the language and familiar with its syntax and core concepts.</p>
+        </article>
+        <article class="skill-group">
+          <h3>HTML &amp; CSS</h3>
+          <p>I have experience with frontend development through my work with FaZe Media, college courses, and personal projects. I am comfortable building and styling interfaces, although frontend development is currently the area where I have the least experience.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -520,8 +508,6 @@
   </div>
 </footer>
 
-<!-- Written by update-photos.bat; lists everything in the photos folder -->
-<script src="photos/photos.js"></script>
 <script>
 /* =========================================================
    EDIT ME: add your real info here. Anything in [brackets]
@@ -540,22 +526,17 @@ const SITE = {
     leetcode: "https://leetcode.com/u/your-handle"
   },
 
-  about: [
-    "[Write a short introduction about yourself, your interests, and what you enjoy building.]",
-    "[Add a second paragraph about the kind of engineering or design problems you like solving.]"
-  ],
 
   facts: [
-    ["Location", "[City, State]"],
+    ["Location", "Central, South Carolina"],
     ["Focus", "Software Engineering"],
-    ["Interests", "[Web · Systems · UI/UX · etc.]"],
-    ["Graduation", "[Expected Year]"]
+    ["Graduation", "2030"]
   ],
 
   skills: [
     { name: "Languages", note: "Languages you use regularly.", items: ["C++", "Python"] },
     { name: "Web", note: "Frontend and web technologies.", items: ["HTML", "CSS", "JavaScript", "[Add more]"] },
-    { name: "Tools", note: "Development tools and platforms.", items: ["Git", "GitHub", "[VS Code]", "[Add more]"] },
+    { name: "Tools", note: "Development tools and platforms.", items: ["Git", "GitHub", "VS Code", "IDA PRO", "X64 DBG"] },
     { name: "Other", note: "Frameworks, APIs, systems, or concepts.", items: ["[Discord API]", "[Add more]", "[Add more]"] }
   ],
 
@@ -578,55 +559,12 @@ const SITE = {
     // { role: "Software Engineering Intern", org: "Company", dates: "Summer 2026", logo: "logos/company.png", description: "What you built + a measurable result." },
   ],
 
-  projects: [
-    {
-      title: "[Discord Bot / Platform Name]",
-      type: "Software · 01",
-      description: "[Explain the problem, what you built, and what made the project technically interesting. Mention payment processing, order IDs, role assignment, surveys, channel creation, or other meaningful systems if relevant.]",
-      tech: ["Python", "Discord API", "Payments"],
-      url: "#"
-    },
-    {
-      title: "[Project Two]",
-      type: "Web · 02",
-      description: "[Describe a substantial project with a clear purpose, your contribution, and the result.]",
-      tech: ["HTML", "CSS", "JavaScript"],
-      url: "#"
-    },
-    {
-      title: "[Project Three]",
-      type: "Engineering · 03",
-      description: "[Add another project that demonstrates algorithms, backend work, systems, automation, or a difficult technical problem.]",
-      tech: ["C++", "Python", "[Technology]"],
-      url: "#"
-    },
-    {
-      title: "[Project Four]",
-      type: "Creative / Technical · 04",
-      description: "[Use this slot for a design-heavy project, tool, game, experiment, freelance work, or other work you are proud of.]",
-      tech: ["[Technology]", "[Technology]"],
-      url: "#"
-    }
-  ],
-
   education: {
     school: "[Coastal Carolina University]",
     degree: "Computer Science · GUPTA college of science",
     dates: "[2026 – 2030]"
   },
-
-  credentials: [
-    ["[Certification / Award]", "[Year]"],
-    ["[Academic achievement]", "[Year]"],
-    ["[Competition / Organization]", "[Year]"]
-  ],
-
-  currently: [
-    { number: "01", title: "[Current project]", description: "[What you're building right now.]" },
-    { number: "02", title: "[Currently learning]", description: "[Technology, concept, framework, or area you're learning.]" },
-    { number: "03", title: "[Current goal]", description: "[Internship search, open-source contribution, portfolio goal, etc.]" }
-  ],
-
+  
   contactCopy: "Have a role, project, collaboration, or opportunity? Put your preferred contact information here.",
   autoplayMs: 3000
 };
@@ -653,13 +591,7 @@ document.getElementById("about-copy").innerHTML = SITE.about.map(p => `<p>${p}</
 document.getElementById("facts").innerHTML = SITE.facts.map(([label, value]) => `<li><span class="label">${label}</span><span class="value">${value}</span></li>`).join("");
 
 /* ---------- Skills ---------- */
-document.getElementById("skills-grid").innerHTML = SITE.skills.map(group => `
-  <article class="skill-group">
-    <h3>${group.name}</h3>
-    <p>${group.note}</p>
-    <div class="tags">${group.items.map(item => `<span class="tag">${item}</span>`).join("")}</div>
-  </article>
-`).join("");
+// Skills are written directly in the HTML (#skills-grid).
 
 /* ---------- Experience ---------- */
 document.getElementById("experience-list").innerHTML = SITE.experience.map(e => {
@@ -706,193 +638,6 @@ document.getElementById("currently-grid").innerHTML = SITE.currently.map(item =>
 const nav = document.getElementById("site-nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 8), { passive: true });
 
-/* =========================================================
-   Photo discovery. The carousel uses whatever is in /photos:
-   1. photos/photos.js
-   2. photos/manifest.json
-   3. the folder's directory listing
-   4. guessed names
-   ========================================================= */
-const IMG_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
-const EXTS = ["jpg", "jpeg", "png", "webp", "gif", "avif"];
-const NAME_PATTERNS = [k => `${k}`, k => `image${k}`, k => `image (${k})`, k => `photo${k}`, k => `img${k}`];
-
-const canLoad = src => new Promise(res => {
-  const i = new Image();
-  i.onload = () => res(true);
-  i.onerror = () => res(false);
-  i.src = src;
-});
-
-async function fromScript() {
-  const list = window.PHOTOS;
-  return Array.isArray(list) ? list.filter(n => IMG_RE.test(n)).map(n => "photos/" + encodeURI(n)) : [];
-}
-
-async function fromManifest() {
-  try {
-    const r = await fetch("photos/manifest.json", { cache: "no-cache" });
-    if (!r.ok) return [];
-    const list = await r.json();
-    return Array.isArray(list) ? list.filter(n => IMG_RE.test(n)).map(n => "photos/" + encodeURI(n)) : [];
-  } catch { return []; }
-}
-
-async function fromListing() {
-  try {
-    const r = await fetch("photos/", { cache: "no-cache" });
-    if (!r.ok || !(r.headers.get("content-type") || "").includes("text/html")) return [];
-    const doc = new DOMParser().parseFromString(await r.text(), "text/html");
-    const names = [...doc.querySelectorAll("a")]
-      .map(a => decodeURIComponent((a.getAttribute("href") || "").split("/").pop()))
-      .filter(n => IMG_RE.test(n));
-    names.sort((a,b) => a.localeCompare(b, undefined, { numeric:true }));
-    return names.map(n => "photos/" + encodeURIComponent(n));
-  } catch { return []; }
-}
-
-async function probe(base) {
-  const tries = await Promise.all(EXTS.map(async e => {
-    const src = `photos/${encodeURI(base)}.${e}`;
-    return (await canLoad(src)) ? src : null;
-  }));
-  return tries.find(Boolean) || null;
-}
-
-async function fromGuessing() {
-  const found = [];
-  for (const base of ["image", "photo", "img"]) {
-    const hit = await probe(base);
-    if (hit) found.push(hit);
-  }
-  for (const pattern of NAME_PATTERNS) {
-    for (let k = 1; k <= 100; k++) {
-      const hit = await probe(pattern(k));
-      if (!hit) break;
-      if (!found.includes(hit)) found.push(hit);
-    }
-  }
-  return found;
-}
-
-async function discoverPhotos() {
-  for (const step of [fromScript, fromManifest, fromListing, fromGuessing]) {
-    const list = await step();
-    if (list.length) return list;
-  }
-  return [];
-}
-
-/* ---------- Carousel ---------- */
-const stage = document.getElementById("stage");
-const controls = document.getElementById("controls");
-const countEl = document.getElementById("count");
-const hintEl = document.getElementById("hint");
-const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-let slides = [], n = 0, uniqueN = 0, idx = 0, timer = null, hovering = false;
-const prevO = new Map();
-
-function build(photos) {
-  const isPlaceholder = photos.length === 0;
-  let items = isPlaceholder ? [null, null, null] : photos;
-  uniqueN = isPlaceholder ? 0 : items.length;
-  while (!isPlaceholder && items.length < 3) items = items.concat(photos);
-  n = items.length;
-  stage.innerHTML = "";
-  slides = items.map((src, i) => {
-    const el = document.createElement("figure");
-    el.className = "slide" + (isPlaceholder ? " placeholder" : "");
-    el.setAttribute("aria-label", `Photo ${(i % (uniqueN || n)) + 1} of ${uniqueN || n}`);
-    if (src) {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = `Photo ${(i % uniqueN) + 1}`;
-      img.decoding = "async";
-      el.appendChild(img);
-    }
-    el.addEventListener("click", () => { if (i !== idx) go(i); });
-    stage.appendChild(el);
-    return el;
-  });
-  if (isPlaceholder) hintEl.hidden = false;
-  controls.hidden = isPlaceholder || uniqueN < 2;
-}
-
-function layout(intro = false) {
-  const gapPx = Math.round(stage.clientWidth * .03);
-  slides.forEach((el, i) => {
-    let o = (i - idx + n) % n;
-    if (o > n / 2) o -= n;
-    const visible = Math.abs(o) <= 1;
-    const prev = prevO.get(i);
-    const jumps = prev !== undefined && Math.abs(o - prev) > 1 && !intro;
-    el.classList.toggle("no-anim", jumps);
-    el.classList.toggle("is-center", o === 0);
-    el.style.setProperty("--gap-px", gapPx + "px");
-    el.style.setProperty("--o", o);
-    el.style.setProperty("--sh", Math.sign(o));
-    el.style.setProperty("--a", visible ? (o === 0 ? 1 : .92) : 0);
-    el.style.setProperty("--g", o === 0 ? 0 : .65);
-    el.style.setProperty("--s", o === 0 ? 1.11 : 1);
-    el.style.zIndex = visible ? (o === 0 ? 3 : 2) : 1;
-    el.style.pointerEvents = visible ? "auto" : "none";
-    el.tabIndex = -1;
-    el.setAttribute("aria-hidden", o === 0 ? "false" : "true");
-    prevO.set(i, o);
-  });
-  if (slides.some(s => s.classList.contains("no-anim"))) requestAnimationFrame(() => slides.forEach(s => s.classList.remove("no-anim")));
-  countEl.textContent = uniqueN ? `${(idx % uniqueN) + 1} / ${uniqueN}` : "";
-}
-
-function intro() {
-  slides.forEach(el => {
-    el.classList.add("no-anim");
-    el.style.setProperty("--o", 0);
-    el.style.setProperty("--sh", 0);
-    el.style.setProperty("--a", 0);
-    el.style.setProperty("--g", 0);
-  });
-  void stage.offsetWidth;
-  slides.forEach(el => el.classList.remove("no-anim"));
-  layout(true);
-}
-
-function go(i) { idx = (i + n) % n; layout(); restart(); }
-const next = () => go(idx + 1);
-const prev = () => go(idx - 1);
-function restart() {
-  clearInterval(timer);
-  if (!SITE.autoplayMs || reduceMotion || n < 2 || controls.hidden) return;
-  timer = setInterval(() => { if (!hovering && !document.hidden) go(idx + 1); }, SITE.autoplayMs);
-}
-
-document.getElementById("next").addEventListener("click", next);
-document.getElementById("prev").addEventListener("click", prev);
-stage.addEventListener("keydown", e => {
-  if (e.key === "ArrowRight") { e.preventDefault(); next(); }
-  if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
-});
-stage.addEventListener("mouseenter", () => hovering = true);
-stage.addEventListener("mouseleave", () => hovering = false);
-let startX = null, dragged = false;
-stage.addEventListener("pointerdown", e => { startX = e.clientX; dragged = false; });
-stage.addEventListener("pointermove", e => { if (startX !== null && Math.abs(e.clientX - startX) > 8) dragged = true; });
-window.addEventListener("pointerup", e => {
-  if (startX === null) return;
-  const dx = e.clientX - startX;
-  startX = null;
-  if (controls.hidden) return;
-  if (Math.abs(dx) > 40) dx < 0 ? next() : prev();
-});
-stage.addEventListener("click", e => { if (dragged) e.stopPropagation(); }, true);
-window.addEventListener("resize", () => layout());
-
-discoverPhotos().then(photos => {
-  build(photos);
-  idx = 0;
-  if (reduceMotion) layout(true); else requestAnimationFrame(intro);
-  restart();
-});
 </script>
 </body>
 </html>
